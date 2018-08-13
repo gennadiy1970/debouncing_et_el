@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sizes &amp; Scroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Sizes &amp; Scroll</h2>
+        <ul>
+            <li>
+                <a class="red"  href="./html/window.html">innerHeight, outerHeight:</a> размеры окна браузера
+            </li>
+            <li>
+                <a class="red"  href="./html/inline.html">inline: </a> CSS sizes - удобно, но не надежно
+            </li>
+            <li>
+                <a class="red"  href="./html/getComputedStyle.html">getComputedStyle: </a>вычисленные свойства CSS элемента - надежно, но не удобно</li>
+            <li>
+                <a class="red"  href="./html/getBoundingClientRect.html">getBoundingClientRect: </a> вычисленные расстояния до viewport(левой и верхней границ), а также суммарная ширина и высота элемента без
+                    margin - относителье расстояния не всегда нужны.</li>
+            <li>размеры и расстояния для элемента:
+                <ul>
+                    <li>
+                        <a class="red" href="./html/offset.html">offset: </a> габариты элемента -margin +scroll, расстояние до body (top, left)
+                    </li>
+                    <li>
+                        <a class="red"  href="./html/client.html">client:</a> габариты элемента -margin и -scroll
+                    </li>
+                    <li>
+                        <a class="red"  href="./html/transform.html">transform: </a> размеры при воздействии CSS transform
+                    </li>
+                    <li>Абсолютный размер - расстояние от элемента границы документа. 
+                        <br>Такого свойства нет. 
+                        <br>Но его можно получить зная размер документа и положение scroll
+                    </li>
+
+                    <li>
+                        <a class="red"  href="./html/scroll.html">window</a> scrolling
+                    </li>
+                    <li>
+                        <a class="red"  href="./html/element-scroll.html">element</a> scrolling
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="red" href="./html/resize.html">scroll, resize: </a>события, влияющие на размеры и расстояния
+            </li>
+            <li>решение проблемы частоты возникновения событий scroll и resize:</li>
+            <ul>
+                <li>
+                    <a class="red" href="./html/throttling.html">throttling</a>
+                </li>
+                <li>
+                    <a class="red" href="./html/debouncing.html">debouncing</a>
+                </li>
+                <li>
+                    <a class="red" href="./html/requestAnimationFrame.html">requestAnimationFrame</a>
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

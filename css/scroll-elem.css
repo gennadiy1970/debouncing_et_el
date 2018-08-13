@@ -1,0 +1,41 @@
+.scroll-elem__wrapper {
+    height: 600px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.box {
+    max-width: 1920px;
+    margin: auto;
+  }
+  img {
+    display: block;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .btn-next,
+  .btn-prev {
+    position: fixed;
+    --s: 3rem;
+    height: var(--s);
+    width: var(--s);
+    
+    border-radius: 50%;
+    background: #fff;
+    border: none;
+    box-shadow: 2px 2px 2px 2px hsla(0, 0%, 0%, .2);
+    cursor: pointer;
+  }
+  .btn-next {
+    right: var(--s);
+    top: var(--s);
+  }
+  .btn-prev  {
+    left: var(--s);
+    top: var(--s);
+  }
+  .btn-next:hover,
+  .btn-prev:hover {
+    box-shadow: 1px 1px 1px 1px hsla(0, 0%, 0%, .5);
+  }

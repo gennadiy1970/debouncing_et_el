@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resize &amp; Scroll</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Resize &amp; Scroll</h2>
+        <h4>Resize</h4>
+        <p>Если для viewport (окно просмотра) изменится ширина или высота, то будет вызвано событие window.resize Такое событие
+            может произойти например в результате изменения размера окна браузера или изменения масштабного коэффициента
+            масштабирования страницы или изменения размера элемента iframe.
+        </p>
+        <h4>Scroll</h4>
+        <p>Если viewport документа подвергается scroll, то вызывается событие window.scroll</p>
+        <h4>Обработка этих событий</h4>
+        <pre class="code">
+window.addEventListener('resize',callback);
+window.addEventListener('scroll',callback);
+        </pre>
+        <h5>Проблема этих событий</h5>
+        <p>Эти события (а также mouseover) создают большое количество вызовов функции callback. Если callback функция осуществляет
+            вычисления с большой нагрузкой на CPU то пользователь столкнется с неравномерным скачкам изображения или даже
+            торможением приложения.
+        </p>
+        <h4>Demo</h4>
+        <p class="code">
+            количество событий resize: <span class="box__resize red"></span>
+            количество событий scroll: <span class="box__scroll red"></span>
+        </p>
+        <div><button class="box__to-zero">Обнулить счетчики событий</button></div>
+        <p>Выход из этой ситуации в том, чтобы не обрабатывать callback так часто, как страбатывают события. Для этого существую
+            несколько подходов - debouncing и throttling, а также встроенный в браузер метод requestAnimationFrame.
+        </p>
+    </div>
+    <script src="../js/resize.js"></script>
+</body>
+
+</html>

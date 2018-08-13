@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getBoundingClientRect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/getBoundingClientRect.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>getBoundingClientRect</h2>
+        <p class="code">elem.getBoundingClientRect()</p>
+        <p>Расстояния до элемента относительно верхней и левой стороны viewport а также размеры элемента без margin, но с учетом
+            scroll элемента.</p>
+        <p class="attention">Расстояния до viewport относительны. При прокрутке экрана такие расстояния могут быть отрицательными, если элемент
+            (или его часть) окажется вне видимости экрана</p>
+        <ul>
+            <li>top - относительно верхней границы viewport (изменяются при scroll)</li>
+            <li>right относительно левой границы viewport (изменяются при scroll</li>
+            <li>bottom - относительно верхней границы viewport (изменяются при scroll)</li>
+            <li>left - относительно левой границы viewport (изменяются при scroll)</li>
+            <li>width - ширина блока без margin, включая ширину scroll</li>
+            <li>height - высота блока без margin, включая ширину scroll</li>
+        </ul>
+        <div class="box code">
+            <table>
+                <caption>element</caption>
+                <tr>
+                    <td>element.getBoundingClientRect().top </td>
+                    <td class="box__top red"></td>
+                </tr>
+                <tr>
+                    <td>element.getBoundingClientRect().right</td>
+                    <td class="box__right red"></td>
+                </tr>
+                <tr>
+                    <td>element.getBoundingClientRect().bottom</td>
+                    <td class="box__bottom red"></td>
+                </tr>
+                <tr>
+                    <td>element.getBoundingClientRect().left</td>
+                    <td class="box__left red"></td>
+                </tr>
+                <tr>
+                    <td>element.getBoundingClientRect().width</td>
+                    <td class="box__width red"></td>
+                </tr>
+                <tr>
+                    <td>element.getBoundingClientRect().height</td>
+                    <td class="box__height red"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="../js/getBoundingClientRect.js"></script>
+</body>
+
+</html>

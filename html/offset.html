@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Offset</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body {
+            border-top: 10px solid gold;
+            border-left: 10px solid gold;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        .box-parent {
+            border-top: 10px solid gold;
+            border-left: 10px solid gold;
+            padding-top: 20px;
+            padding-left: 20px;
+            width: 35rem;
+            min-height: 20rem;
+            padding-top: 5rem;
+            padding-left: 5rem;
+            background: grey;position: static;
+        }
+        .box {
+            position: static;
+            width: 20rem;
+            min-height: 10rem;
+            background: #000;
+            color: #fff;
+            outline: 1px solid orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Offset</h2>
+        <p>Для блочных элементов offsetWidth и offsetHeight описывают границы блока элемента.</p>
+             <p>offsetTop, offsetLeft описывают расстояние до border body (padding body учитывается, а border body нет).</p>
+        <p>
+            <pre class="code">
+function getOffset (elem) {
+  return {
+    height: elem.offsetHeight,
+    width: elem.offsetWidth,
+    top: elem.offsetTop,
+    left: elem.offsetLeft
+  }
+};                
+            </pre>
+        </p>
+        <div class="box-parent">
+            <div class="box">
+                <table>
+                    <tr>
+                        <td>height</td>
+                        <td class="box-height red"></td>
+                    </tr>
+                    <tr>
+                        <td>width</td>
+                        <td class="box-width red"></td>
+                    </tr>
+                    <tr>
+                        <td>top</td>
+                        <td class="box-top red"></td>
+                    </tr>
+                    <tr>
+                        <td>left</td>
+                        <td class="box-left red"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <ul>
+            <li>offsetTop - расстояние от  elem border-top до  body border-top.
+            </li>
+            <li>offsetHeiht - высота элемента без margin. Scroll элемента, если есть, то учитывается</li>
+            <li>offsetWidth - ширина элемента без margin. Scroll элемента, если есть, то учитывается</li>
+            <li>offsetLeft - расстояние от левой границы элемента (от border-left) до левого края body</li>
+        </ul>
+        <div class="container">
+            <span class="container-border">parent border-top</span>
+            <div class="container-top">
+                <p class="container-top__text">
+                    <span class="container-top--white">offset-top</span>
+                </p>
+            </div>
+            <div class="container-left">
+                <p class="container-left__text">
+                    <span class="container-left--white">offset-left</span>
+                </p>
+            </div>
+            <div class="box-border-wrp">
+                <div class="box-border">
+                    <span>margin-top</span>
+                    <div class="border">
+                        <span>border-top</span>
+                        <div class="padding set-flex">
+                            <div class="content main">
+                                <span>padding-top</span>
+                                <h4>height (content-area)</h4>
+                                <span>padding-bottom</span>
+                            </div>
+                            <div class="scroll">
+                                <span class="scroll__up">▲</span>
+                                <span class="scroll__line"></span>
+                                <span class="scroll__down">▼</span>
+                            </div>
+                        </div>
+                        <span>border-bottom</span>
+                    </div>
+                    <span>margin-bottom</span>
+                </div>
+                <div class="offset-width">
+                    <p class="offset-width__text">
+                        <span class="offset-width--white">offset-width</span>
+                    </p>
+                </div>
+                <div class="offset-height">
+                    <p class="offset-height__text">
+                        <span class="offset-height--white">offset-height</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/offset.js"></script>
+</body>
+
+</html>

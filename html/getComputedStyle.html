@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>getComputedStyle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    .box {
+        outline: 1px solid orangered;
+    }
+        </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>getComputedStyle</h2>
+        <p class="code">window.getComputedStyle(elem)</p>
+        <div class="box">
+                <table>
+                    <caption>element</caption>
+                    <tr>
+                        <td>width</td>
+                        <td class="box__width"></td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td class="box__height"></td>
+                    </tr>
+                </table>
+            </div>
+        <p>Эта функция вернет все CSS свойства элемента с учетом применения каскадности.</p>
+        <p>А это: </p>
+        <dl>
+            <dt>
+                очень много данных, но нет ряда необходимых:
+            </dt>
+            <dt>
+                нет размеров блока (необходимо суммировать)
+            </dt>
+            <dt>
+                нет размеров,относительно всего документа (абсолютное положение)
+            </dt>
+            <dt>
+                нет размеров, выходящих за scroll элемента
+            </dt>
+
+            <dt>
+                нет размеров, до границ viewport элемента (относительное положение)
+            </dt>
+            
+        </dl>
+        <p>Пример получения всех размеров элмента:</p>
+        <p>
+            <pre class="code">
+function getBoxModelSizes (elem) {
+  const obj = window.getComputedStyle(elem);
+  return {
+    width: obj.width,
+    height: obj.height,
+    marginTop: obj.marginTop,
+    marginRight: obj.marginRight,
+    marginButtom: obj.marginButtom,
+    marginLeft: obj.marginLeft,
+    paddingTop: obj.paddingTop,
+    paddingRight: obj.paddingRight,
+    paddingButtom: obj.paddingButtom,
+    paddingLeft: obj.paddingLeft,
+    borderTopWidth: obj.borderTopWidth,
+    borderRightWidth: obj.borderRightWidth,
+    borderButtomWidth: obj.borderButtomWidth,
+    borderLeftWidth: obj.borderLeftWidth
+  }
+};            
+        </pre>
+        </p>
+
+    </div>
+    <script src="../js/getComputedStyle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Client</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+    body {
+        border-top: 10px solid gold;
+        border-left: 10px solid gold;
+        /* padding-top: 20px;
+        padding-left: 20px; */
+    } 
+    .box-parent {
+        border-top: 10px solid gold;
+        border-left: 10px solid gold;
+        padding-top: 20px;
+        padding-left: 20px;
+        width: 35rem;
+        min-height: 20rem;
+        padding-top: 5rem;
+        padding-left: 5rem;
+        background: grey;position: static;
+        margin-bottom: 2rem;
+    }
+    .box {
+        position: static;
+        border-top: 20px solid orangered;
+        border-left: 10px solid gold;
+        width: 20rem;
+        height: 10rem;
+        background: #000;
+        color: #fff;
+        overflow: scroll;
+        
+        /* outline: 1px solid orangered; */
+    }
+    .transparent {
+        opacity: 0.1;
+        padding: 1rem;
+        text-indent: 2rem;
+    }
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Client</h2>
+        <p>clientTop === window.getComputedStyle(elem).borderTopWidth</p>
+        <p>clientLeft === window.getComputedStyle(elem).borderLeftWidth</p>
+        <p><pre class="code">
+function getClientSizes (elem) {
+  return {
+    height: elem.clientHeight,
+    width: elem.clientWidth,
+    top: elem.clientTop,
+    left: elem.clientLeft
+  }
+}            
+        </pre></p>
+        <div class="box-parent">
+                <div class="box">
+                    <table>
+                        <tr>
+                            <td>height</td>
+                            <td class="box-height red"></td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td class="box-width red"></td>
+                        </tr>
+                        <tr>
+                            <td>top</td>
+                            <td class="box-top red"></td>
+                        </tr>
+                        <tr>
+                            <td>left</td>
+                            <td class="box-left red"></td>
+                        </tr>
+                    </table>
+                    <div class="transparent">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veritatis adipisci sit aspernatur beatae corrupti, est rerum doloribus quasi vel quaerat molestiae cum blanditiis nesciunt fugit maiores ex quo. Doloribus.
+                        Odio illum suscipit amet non! Maxime repellendus veritatis aperiam dolores quibusdam possimus quasi laborum dolore qui, voluptatibus numquam nobis, at eaque. Omnis accusantium culpa obcaecati velit vel a eos debitis!
+                        Repellat nam quam asperiores sapiente expedita sit fugiat consequatur quidem omnis quod architecto commodi tenetur consequuntur voluptatibus rerum ipsa illum, iure sequi magnam ratione eligendi quaerat excepturi? Minima, eaque corporis.
+                        Nesciunt doloribus, sed rem autem fugit corporis magnam cupiditate mollitia ipsa dolorum adipisci, obcaecati excepturi possimus soluta error aliquam eaque pariatur eos saepe nam eius repudiandae. Dolor ea in assumenda.
+                        Quam modi fuga perspiciatis possimus? Dignissimos esse neque ut distinctio odio quod, unde iure nam voluptas magnam asperiores voluptate fugit nostrum, quos eaque reiciendis! Voluptatum blanditiis facere obcaecati dolor odio.
+                    </div>
+                </div>
+            </div>
+    <div class="container">
+        <div class="box-border-wrp">
+            <div class="box-border">
+                <span>margin-top</span>
+                <div class="border">
+                    <span>border-top</span>
+                    <div class="padding set-flex">
+                        <div class="content main">
+                            <span>padding-top</span>
+                            <h4>height (content-area)</h4>
+                            <span>padding-bottom</span>
+                        </div>
+                        <div class="scroll">
+                            <span class="scroll__up">▲</span>
+                            <span class="scroll__line"></span>
+                            <span class="scroll__down">▼</span>
+                        </div>
+                    </div>
+                    <span>border-bottom</span>
+                </div>
+                <span>margin-bottom</span>
+            </div>
+            <div class="clientWidth">
+                <p class="offset-width__text">
+                    <span class="offset-width--white">clientWidth</span>
+                </p>
+            </div>
+            <div class="clientHeight">
+                <p class="offset-height__text">
+                    <span class="offset-height--white">clientHeight</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../js/client.js"></script>
+</body>
+
+</html>

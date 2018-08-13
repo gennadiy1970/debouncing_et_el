@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Element Scroll</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/scroll-elem.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Scroll of the Element</h2>
+        <ul>
+            <li><i class="windowShift">element.scrollTop </i>- получает или устанавливает количество пикселей, на которое контент элемента прокручен вверх.</li>
+            <li> <i class="windowShift">element.scrollLeft</i> - получает или устанавливает количество пикселей, на которое контент элемента прокручен влево.</li>
+        </ul>
+        <p>
+            <pre class="code">
+function next() {
+  element.scrollTop = img.height;
+}                
+            </pre>
+        </p>
+        <div class="scroll-elem__wrapper">
+            <div class="box">
+                <img src="https://bestwallpapers.co/wp-content/uploads/2018/05/hd-spring-wallpaper.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="https://images.wallpaperscraft.com/image/summer_trees_autumn_mountains_nature_84572_1920x1080.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="https://images.wallpaperscraft.ru/image/voda_list_zheltyy_kamushki_prozrachnaya_ruchey_55775_1920x1080.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="https://img1.goodfon.ru/original/1920x1080/9/79/reka-ruchey-sneg-vesna-les.jpg" alt="">
+            </div>
+
+            <button id="next" class="btn-next">next</button>
+            <button id="perv" class="btn-prev">prev</button>
+        </div>
+        <!-- <p>Свойства объекта window сообщающие о том  насколько прокурчена страница</p>
+        <ul>
+                <li>window.pageXOffset</li>
+                <li>window.pageYOffset</li>
+            </ul>
+        <p><pre class="code showScrollOfElement">
+function getScroll () {
+  return {
+    x: window.pageXOffset,
+    y: window.pageYOffset
+  }
+}
+console.log(`x = ${<span class="getScrollX get"></span>}; y = {<span class="getScrollY get"></span>}`')
+        </pre>        </p>-->
+
+        <!-- </div> -->
+        <!--
+    <p>Получение расстояния от начала документа до элемента:</p>
+    <p class="code">let y = elem.getBoundingClientRect().top + window.pageYOffset;</p>
+    <p class="code txtElem">console.log( `top: ${ <i class="get positionTxtElem">0</i>  + <i class="get positionWinY"></i> = ${ <i class="get sum"></i>}}`) </p>
+    <h4>Методы смещения документа</h4>
+    <ul>
+        <li>window.scrollBy(X, Y, option) - смещение в px документа относительно текущего положения. 
+            Допустимы отрицательные значения.</li>
+        <li>window.scroll(X, Y, option) - перемещение в px к заданым координатам документа document (абсолютное смещение)</li>
+        <li>option для этих методов:
+            <ul>
+                <li>top :  координата Y</li>
+                <li>left :  координата X</li>
+                <li>behavior : <ul>
+                    <li>auto <sapn class="comment"> по умолчанию </sapn> </li>
+                    <li>smooth</li>
+                    <li>instant</li>
+                </ul></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="windowShift">
+            window.scrollBy: 
+            <button id="scrollByPlus">+10</button>
+            <button id="scrollByMinus">-10</button>
+            <i class="comment">px</i>
+    </div>
+    <div class="windowShiftTo">
+            window.scroll: 
+            <button id="scrollTo">10</button>
+            <i class="comment">px</i>
+    </div>
+    <h4>Пример</h4>
+    <p>Плавная полноэкранная прокуртка по клику <a href="https://codepen.io/Gorbulin/pen/wxRjqY?">codepen</a></p>
+    <p>Задание - реализовать callback для window.scroll, который бы оценивал направление скролла и после этого
+        смещал изображения на экран вверх или вниз.
+    </p> -->
+    </div>
+    <script src="../js/elem-scroll.js"></script>
+</body>
+
+</html>

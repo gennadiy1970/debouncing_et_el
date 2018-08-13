@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>requestAnimationFrame</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2>requestAnimationFrame</h2>
+        <p>У браузера существует собственный цикл перерисовки страницы (предположительно раз в 20ms).</p>
+        <p>Функции перерисовки, задаваемые пользователем могут совпадать или не совпадать с циклом перерисовки браузера.
+            В последнем случае (из-за несовпадения) происходят излишние расчеты, что увиличивает нагрузку на CPU 
+            и увеличивает расход энергии что актуально для мобильных устройств.
+        </p>
+        <p>Функция - обертка браузера requestAnimationFrame позволяет синхронизировать вызовы пользовательской функции 
+            с расчетами браузера, что заметно влияет на плавность отображения, снижает  нагрузку на CPU и расход энергии.
+        </p>
+        <div>
+            <pre class="code">
+var requestId = requestAnimationFrame(callback)
+
+function repeatOften() {
+    // Do whatever
+    requestAnimationFrame(repeatOften);
+}
+repeatOften();                
+// cancelAnimationFrame(requestId);
+</pre>
+        </div>
+        <p>Подробнее <a href="https://developer.mozilla.org/ru/docs/DOM/window.requestAnimationFrame">на MDN</a></p>
+    </div>
+   <script src="../js/app.js"></script>
+</body>
+</html>

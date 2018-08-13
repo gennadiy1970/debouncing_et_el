@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inline CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>inline CSS</h2>
+        <ol>
+            <li>
+                <h4>Получить значения inline свойств - GET()</h4>
+                <ul>
+                    <li class="code">elem.<b>style</b>.property</li>
+                    <li class="code">elem.<b>getAttribute</b>(property)</li>
+                    <li>Недостатки - получите только inline свойста, а не реальные свойства элемента. Например !important может
+                        перебить приоритет inline свойста.
+
+                    </li>
+                </ul>
+                <h4>Недостатки</h4>
+                <pre class="code">
+HTML 
+&lt;div class="green" style="color: <i class="red">red</i>;"&gt; <i class="green" style="color: red;">Hello</i> &lt;/div&gt;
+css 
+.green { color: <i class="green">green !impotrant</i> }
+JS
+let elemColor = document.querySelector('.green').style.color; 
+console.log( <i class="elemColor red">elemColor</i> )
+                </pre>
+                        <h4>Недостатки</h4>
+                        <table>
+                            <tr>
+                                <th>CSS</th>
+                                <th>style</th>
+                            </tr>
+                            <tr>
+                                <td>padding-top</td>
+                                <td>paddingTop</td>
+                            </tr>
+                            <tr>
+                                <td>margin-left</td>
+                                <td>marginLeft</td>
+                            </tr>
+                            <tr>
+                                <td>border-bottom-left-radius</td>
+                                <td>borderBottomLeftRadius</td>
+                            </tr>
+                        </table>
+                <!-- </ul> -->
+            </li>
+            <li>
+                <h4>Установить значения inline свойств - SET(value)</h4>
+                <ul>
+                    <li class="code">elem.<b>style</b>.property = <b>value</b>
+                    </li>
+                    <li class="code">elem.<b>setAttribute</b>(property, <b>value</b>)
+                    </li>
+                    <li>
+                        <h4>Недостатки</h4>
+                        <p>Перезапись атрибутов методом setAttribute</p>
+                        <pre class="code">
+HTML 
+&lt;div class="text" style="color: <i class="red">red</i>;"&gt; <i style="color: red;">Hello</i> &lt;/div&gt;
+JS
+let elem = document.querySelector('.text');
+elem.style.backgroundColor = " <i class="orange">orange</i> ";
+HTML 
+&lt;div class="text" 
+     style="background-color:  <i class="orange">orange</i>; color: <i class="red">red</i>;"&gt; 
+    <i class="red orange">Hello</i>
+&lt;/div&gt;
+                        </pre>
+                    </li>
+                        <li>
+                        <pre class="code">
+HTML 
+&lt;div class="text" style="color: <i class="red">red</i>;"&gt; <i style="color: red;">Hello</i> &lt;/div&gt;
+JS
+let elem = document.querySelector('.text');
+elem.setAttribute('style','background-color: <i class="orange">orange</i>');
+HTML 
+&lt;div class="green" style="background-color: <i class="orange">orange</i>;"&gt; 
+    <i class="orange">Hello</i> 
+&lt;/div&gt;
+
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <p class="comment">Используйте <b>window.getComputedStyle(elem)</b> для вычесленных CSS свойств.</p>
+            </li>
+        </ol>
+    </div>
+    <script src="../js/inline.js"></script>
+</body>
+
+</html>
